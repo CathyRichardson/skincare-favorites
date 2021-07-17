@@ -18,3 +18,6 @@ const favoritesArr = [
         "picture": "https://www.dhccare.com/media/catalog/product/cache/02cccf94ae90183c4f9b773c23a87fc4/d/h/dhc_deep_cleansing_oil_h_300.png"
     }
 ]
+module.exports = {
+    favoritesArr,
+}

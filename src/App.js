@@ -3,8 +3,6 @@ import './App.css';
 import Favorites from './components/Favorites'
 
 
-import axios from 'axios';
-
 function App() {
   return (
     <div className="App">
