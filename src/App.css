@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  border: 2px solid #282c34;
+  height: 400px;
+  width: 300px;
+}
+
+.product-image {
+  max-height: 300px;
+  max-width: 200px;
+}
+
+h2 {
+  font-size: 15px;
+}
+
+h3 {
+  font-size: 13px;
+}

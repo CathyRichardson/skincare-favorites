@@ -1,6 +1,8 @@
 import axios from "axios";
 import React from "react";
 
+import Product from "./Product";
+
 class Favorites extends React.Component {
     constructor() {
         super()
@@ -12,15 +14,16 @@ class Favorites extends React.Component {
 
     componentDidMount() {
         axios.get('/api/favorites')
-            .then(res => console.log(res))
+            .then(({ data }) => this.setState({ favorites: data }))
             .catch(err => console.log(err));
     }
 
     render() {
+        const { favorites } = this.state;
         return (
-            <div>
-                <h1>Favorites Component</h1>
-            </div>
+            <main>
+                {favorites.map(product => <Product product={product} key={product.id} />)}
+            </main>
         );
     }
 }
