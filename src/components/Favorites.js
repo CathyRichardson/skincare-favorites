@@ -22,7 +22,12 @@ class Favorites extends React.Component {
         const { favorites } = this.state;
         return (
             <main>
-                {favorites.map(product => <Product product={product} key={product.id} />)}
+                <section className="product-list">
+                    {favorites.map(product => <Product product={product} key={product.id} />)}
+                </section>
+                <section className="new-product">
+                    <button>New Product Button</button>
+                </section>
             </main>
         );
     }
