@@ -10,7 +10,6 @@ app.use(express.json());
 
 app.get('/api/favorites', getProducts);
 app.post('/api/favorites', addNewProduct);
-
 app.put('/api/favorites/:id', updateProduct);
 app.delete('/api/favorites/:id', deleteProduct);
 

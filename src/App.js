@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <h1>Current Favorite Skincare</h1>
       <Favorites />
-     
+
     </div>
   );
 }
