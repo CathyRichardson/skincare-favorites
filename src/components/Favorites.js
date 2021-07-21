@@ -18,6 +18,24 @@ class Favorites extends React.Component {
             .catch(err => console.log(err));
     }
 
+   addProduct = (body) => {
+       axios.post(`/api/favorites/`, body)
+       .then(({ data }) => this.setState({ favorites: data }))
+       .catch(err => console.log(err))
+   };
+
+   updateProduct = (id, body) => {
+       axios.put(`/api/favorites/${id}`, body)
+       .then(({ data }) => this.setState({ favorites: data }))
+       .catch(err => console.log(err))
+   };
+
+   deleteProduct = (id) => {
+       axios.delete(`/api/favorites/${id}`)
+       .then(({ data }) => this.setState({ favorites: data }))
+       .catch(err => console.log(err))
+   };
+
     render() {
         const { favorites } = this.state;
         return (
