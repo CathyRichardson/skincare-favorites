@@ -6,6 +6,7 @@ class Product extends React.Component {
     }
 
     render() {
+        // destructuring from this.props.product
         const { product } = this.props;
         return (
             <div className="product">

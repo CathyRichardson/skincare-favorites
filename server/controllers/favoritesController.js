@@ -36,19 +36,19 @@ updateProduct = (req, res) => {
     } else {
         res.status(404).send(`Product id ${id} not found`);
     }
-    
+
 }
 
 deleteProduct = (req, res) => {
     const { id } = req.params;
     const index = favoritesArr.findIndex(product => product.id == id)
     if (index >= 0) {
-       favoritesArr.splice(index, 1);
-    res.status(200).send(favoritesArr); 
+        favoritesArr.splice(index, 1);
+        res.status(200).send(favoritesArr);
     } else {
         res.status(404).send(`Product id ${id} not found`);
     }
-    
+
 }
 
 module.exports = {
