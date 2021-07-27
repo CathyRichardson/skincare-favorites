@@ -14,11 +14,10 @@ class UpdateProductForm extends React.Component {
     }
 
     //this puts the original name/image in the form when clicked
-    //should we update backend to allow updating one at a time?
-    componentDidMount(){
-        const {product} = this.props
-        this.setState({name: product.name, image: product.picture})
-    }
+    // componentDidMount(){
+    //     const {product} = this.props
+    //     this.setState({name: product.name, image: product.picture})
+    // }
 
     handleChange(event) {
         //destructure

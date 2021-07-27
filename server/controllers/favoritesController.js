@@ -23,20 +23,24 @@ updateProduct = (req, res) => {
     const { id } = req.params;
     const { name, picture } = req.body;
 
-    if (!name || !picture) {
-        res.status(409).send(`Missing name or picture value`);
+    if (!name && !picture) {
+        res.status(409).send(`Missing name and picture value`);
         return;
     }
 
     const index = favoritesArr.findIndex(product => product.id == id)
-    if (index >= 0) {
-        favoritesArr[index].name = name;
-        favoritesArr[index].picture = picture;
-        res.status(200).send(favoritesArr)
-    } else {
+    if (index < 0) {
         res.status(404).send(`Product id ${id} not found`);
+        return;
     }
 
+    if (name) {
+        favoritesArr[index].name = name;
+    }
+    if (picture) {
+        favoritesArr[index].picture = picture;
+    }
+    res.status(200).send(favoritesArr)
 }
 
 deleteProduct = (req, res) => {
