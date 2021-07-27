@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #F7F5F8;
+  background-color: #f7f5f8;
   padding: 0px;
   margin: 0px;
 }
@@ -41,28 +41,29 @@
 } */
 
 header {
-  background-image: url('https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
+  background-image: url("https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
   height: 30vh;
   background-position: center;
-  background-repeat: no-repeat; 
-  background-size: cover; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
   color: #a81e46;
-  padding-top: 25px;
 }
 
 main {
   display: flex;
-  
 }
 
 .product-list {
   display: flex;
   flex-wrap: wrap;
   margin-left: 2%;
-
 }
 
 .new-product {
@@ -75,6 +76,12 @@ main {
   height: 420px;
   width: 300px;
   background-color: white;
+  position: relative;
+}
+
+.product-buttons {
+  position: absolute;
+  bottom: 3px;
 }
 
 .product-image {
@@ -100,16 +107,10 @@ button {
   width: 90%;
   text-align: center;
   text-transform: uppercase;
-  display: inline-block;
   font-size: 12px;
 }
 
 button:hover {
-  background-color: #a81e46; /* Green */
+  background-color: #a81e46;
   color: white;
-}
-
-.new-product-form {
-  text-align: left;
-
 }

@@ -1,9 +1,22 @@
 .new-product-form {
-    text-align: left;
-
-   
+  text-align: left;
+  margin-top: 20px;
 }
-/* 
-label {
-    margin-top: 15px;
-} */
+
+.new-product-submit {
+  background-color: #fce4de;
+  border: none;
+  color: black;
+  padding: 10px 10px;
+  margin: 5px;
+  width: 90%;
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.new-product-submit:hover {
+  background-color: #a81e46;
+  color: white;
+}

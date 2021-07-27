@@ -1,5 +1,5 @@
 import React from "react";
-
+import './NewProductForm.css';
 
 class NewProductForm extends React.Component {
     constructor(props) {
@@ -52,7 +52,7 @@ class NewProductForm extends React.Component {
                     Product Image URL:
                     <input type="text" name="image" value={this.state.image} onChange={this.handleChange} />
                 </label>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit" className="new-product-submit"/>
             </form>
         );
     }

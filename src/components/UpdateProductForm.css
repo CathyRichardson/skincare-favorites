@@ -1,0 +1,24 @@
+.update-product-form {
+    text-align: left;
+    position: absolute;
+    bottom: 3px;
+  }
+  
+  .update-product-submit {
+    background-color: #fce4de;
+    border: none;
+    color: black;
+    padding: 10px 10px;
+    margin: 5px;
+    width: 90%;
+    text-align: center;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 12px;
+  }
+  
+  .update-product-submit:hover {
+    background-color: #a81e46;
+    color: white;
+  }
+  

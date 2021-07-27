@@ -1,5 +1,5 @@
 import React from "react";
-import './NewProductForm.css'
+import './UpdateProductForm.css'
 
 class UpdateProductForm extends React.Component {
     constructor(props) {
@@ -42,7 +42,7 @@ class UpdateProductForm extends React.Component {
     render() {
 
         return (
-            <form onSubmit={this.handleSubmit} className="new-product-form">
+            <form onSubmit={this.handleSubmit} className="update-product-form">
                 <label>
                     Product Name:
                     <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
@@ -51,7 +51,7 @@ class UpdateProductForm extends React.Component {
                     Product Image URL:
                     <input type="text" name="image" value={this.state.image} onChange={this.handleChange} />
                 </label>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit"  className="update-product-submit"/>
             </form>
         );
     }
