@@ -1,9 +1,9 @@
 import axios from "axios";
 import React from "react";
 
-
 import Product from "./Product";
 import NewProductForm from "./NewProductForm";
+
 
 class Favorites extends React.Component {
     constructor() {
@@ -72,13 +72,16 @@ class Favorites extends React.Component {
         return (
             <main>
                 <section className="product-list">
-                    {favorites.map(product => <Product product={product} key={product.id} />)}
+                    {favorites.map(product => <Product
+                        product={product}
+                        key={product.id}
+                        updateProduct={this.updateProduct}
+                        deleteProduct={this.deleteProduct} />)}
                 </section>
                 <section className="new-product">
                     {
                         addFormMode
-                            ?
-                            <NewProductForm addProduct={this.addProduct} setAddFormMode={this.setAddFormMode} />
+                            ? <NewProductForm addProduct={this.addProduct} setAddFormMode={this.setAddFormMode} />
                             // <button onClick={() => this.setAddFormMode(false)}>form goes here</button>
                             : <button onClick={() => this.setAddFormMode(true)}>New Product Button</button>
                     }

@@ -42,15 +42,15 @@ class NewProductForm extends React.Component {
             <form onSubmit={this.handleSubmit} className="new-product-form">
                 <label>
                     Product Type:
-                    <input type="text" name="type" value={this.state.value} onChange={this.handleChange} />
+                    <input type="text" name="type" value={this.state.type} onChange={this.handleChange} />
                 </label>
                 <label>
                     Product Name:
-                    <input type="text" name="name" value={this.state.value} onChange={this.handleChange} />
+                    <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
                 </label>
                 <label>
                     Product Image URL:
-                    <input type="text" name="image" value={this.state.value} onChange={this.handleChange} />
+                    <input type="text" name="image" value={this.state.image} onChange={this.handleChange} />
                 </label>
                 <input type="submit" value="Submit" />
             </form>
