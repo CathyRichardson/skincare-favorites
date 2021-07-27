@@ -83,7 +83,7 @@ class Favorites extends React.Component {
                         addFormMode
                             ? <NewProductForm addProduct={this.addProduct} setAddFormMode={this.setAddFormMode} />
                             // <button onClick={() => this.setAddFormMode(false)}>form goes here</button>
-                            : <button onClick={() => this.setAddFormMode(true)}>New Product Button</button>
+                            : <button onClick={() => this.setAddFormMode(true)}>Add a New Product</button>
                     }
                 </section>
             </main>

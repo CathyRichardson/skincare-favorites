@@ -6,9 +6,10 @@ import Favorites from './components/Favorites'
 function App() {
   return (
     <div className="App">
-      <h1>Current Favorite Skincare</h1>
+      <header>
+        <h1>Current Favorite Skincare</h1>
+      </header>
       <Favorites />
-
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import './NewProductForm.css'
+
 
 class NewProductForm extends React.Component {
     constructor(props) {
