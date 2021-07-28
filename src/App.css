@@ -55,7 +55,7 @@ header {
 h1 {
   color: #a81e46;
   font-size: 50px;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 main {
@@ -87,6 +87,8 @@ main {
 .product-buttons {
   position: absolute;
   bottom: 3px;
+  left: 0;
+  right: 0;
 }
 
 .product-image {

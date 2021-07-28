@@ -22,7 +22,7 @@ class NewProductForm extends React.Component {
 
     handleSubmit(event) {
         //destructure
-        const { addProduct, setAddFormMode } = this.props;
+        const { addProduct } = this.props;
         const { type, name, image } = this.state;
         //make sure key name in body matches what's expected in backend
         const body = {
@@ -31,7 +31,7 @@ class NewProductForm extends React.Component {
             picture: image,
         }
         addProduct(body);
-        setAddFormMode(false);
+        this.setState({ type: '', name: '', image: '' });
         event.preventDefault();
     }
 
@@ -40,7 +40,7 @@ class NewProductForm extends React.Component {
 
         return (
             <form onSubmit={this.handleSubmit} className="new-product-form">
-                <h4>Add A New Product</h4>
+                <h4>Add Product</h4>
                 <label>
                     Product Type:
                     <input type="text" name="type" value={this.state.type} onChange={this.handleChange} />
@@ -53,7 +53,7 @@ class NewProductForm extends React.Component {
                     Product Image URL:
                     <input type="text" name="image" value={this.state.image} onChange={this.handleChange} />
                 </label>
-                <input type="submit" value="Submit" className="new-product-submit"/>
+                <input type="submit" value="Submit" className="new-product-submit" />
             </form>
         );
     }

@@ -11,7 +11,6 @@ class Favorites extends React.Component {
 
         this.state = {
             favorites: [],
-            addFormMode: false,
         }
     }
 
@@ -39,35 +38,9 @@ class Favorites extends React.Component {
             .catch(err => console.log(err))
     };
 
-    // If mode is true, set the addFormMode to true, else set to false. 
-    setAddFormMode = (mode) => {
-        this.setState({ addFormMode: mode })
-    }
-
-    //    //temporary test method to be deleted later
-    //    testAxios = () => {
-    //        let body = {
-    //            type: "Puppy",
-    //            name: "newPuppies",
-    //            picture: "https://www.rover.com/blog/wp-content/uploads/2019/05/puppy-in-bowl.jpg"
-    //        }
-    //     this.addProduct(body)
-    //    }
-
-
     render() {
         //destructuring from this.state 
-        const { favorites, addFormMode } = this.state;
-
-        //Could do this way instead of the ternary. Then call this function in return. 
-        // const renderAddProduct = () => {
-        //     if (addFormMode) {
-        //         // return <NewProductForm />
-        //         return <button onClick={() => this.setAddFormMode(false)}>form goes here</button>
-        //     } else {
-        //         return <button onClick={() => this.setAddFormMode(true)}>New Product Button</button>
-        //     }
-        // }
+        const { favorites } = this.state;
 
         return (
             <main>
@@ -79,13 +52,7 @@ class Favorites extends React.Component {
                         deleteProduct={this.deleteProduct} />)}
                 </section>
                 <section className="new-product">
-                    <NewProductForm addProduct={this.addProduct} setAddFormMode={this.setAddFormMode} />
-                    {/* {
-                        addFormMode
-                            ? <NewProductForm addProduct={this.addProduct} setAddFormMode={this.setAddFormMode} />
-                            // <button onClick={() => this.setAddFormMode(false)}>form goes here</button>
-                            : <button onClick={() => this.setAddFormMode(true)}>Add a New Product</button>
-                    } */}
+                    <NewProductForm addProduct={this.addProduct} />
                 </section>
             </main>
         );

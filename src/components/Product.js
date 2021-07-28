@@ -34,7 +34,7 @@ class Product extends React.Component {
                     />
                     : <div className="product-buttons">
                         <button onClick={() => this.setUpdateFormMode(true)}>Update Product</button>
-                        <button onClick={ () => deleteProduct(product.id)}>Delete Product</button>
+                        <button onClick={() => deleteProduct(product.id)}>Delete Product</button>
                     </div>
                 }
             </div>
