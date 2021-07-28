@@ -51,7 +51,7 @@ class UpdateProductForm extends React.Component {
                     Product Image URL:
                     <input type="text" name="image" value={this.state.image} onChange={this.handleChange} />
                 </label>
-                <input type="submit" value="Submit"  className="update-product-submit"/>
+                <input type="submit" value="Submit" className="update-product-submit" />
             </form>
         );
     }

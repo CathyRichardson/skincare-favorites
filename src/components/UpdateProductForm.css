@@ -1,7 +1,12 @@
 .update-product-form {
     text-align: left;
+    font-size: 13px;
     position: absolute;
     bottom: 3px;
+  }
+
+  .update-product-form label {
+      padding: 0px 10px;
   }
   
   .update-product-submit {

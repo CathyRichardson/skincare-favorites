@@ -40,6 +40,7 @@ class NewProductForm extends React.Component {
 
         return (
             <form onSubmit={this.handleSubmit} className="new-product-form">
+                <h4>Add A New Product</h4>
                 <label>
                     Product Type:
                     <input type="text" name="type" value={this.state.type} onChange={this.handleChange} />
