@@ -28,9 +28,12 @@ class Favorites extends React.Component {
 
     searchProducts = () => {
         const { search } = this.state;
-        axios.get(`/api/favorites?search=${search}`)
-            .then(({ data }) => this.setState({ favorites: data }))
-            .catch(err => console.log(err));
+        //if there is no search value, we don't have to call backend
+        if (search) {
+            axios.get(`/api/favorites?search=${search}`)
+                .then(({ data }) => this.setState({ favorites: data }))
+                .catch(err => console.log(err));
+        }
     }
 
     resetSearchProducts = () => {
