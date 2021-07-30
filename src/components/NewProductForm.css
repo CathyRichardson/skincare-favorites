@@ -1,6 +1,7 @@
 .new-product-form {
   text-align: left;
   margin-top: 20px;
+  width: 180px;
 }
 
 .new-product-form label {
@@ -16,8 +17,8 @@
   border: none;
   color: black;
   padding: 10px 10px;
-  margin: 5px;
-  width: 90%;
+  margin-top: 5px;
+  width: 150px;
   text-align: center;
   text-transform: uppercase;
   display: inline-block;

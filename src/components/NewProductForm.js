@@ -37,7 +37,6 @@ class NewProductForm extends React.Component {
 
     render() {
 
-
         return (
             <form onSubmit={this.handleSubmit} className="new-product-form">
                 <h4>Add Product</h4>

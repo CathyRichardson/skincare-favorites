@@ -60,13 +60,28 @@ h1 {
 
 main {
   display: flex;
-  padding: 6% 0;
+  padding: 3% 0;
+}
+
+.search {
+  margin-top: 3%;
+  margin-left: 6%;
+  text-align: left;
+}
+
+.search button {
+  width: 130px;
+}
+
+.reset-hidden {
+  visibility: hidden;
 }
 
 .product-list {
   display: flex;
   flex-wrap: wrap;
   margin-left: 6%;
+  min-width: 350px;
 }
 
 .new-product {

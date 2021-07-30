@@ -2,7 +2,15 @@ const { favoritesArr } = require('../favoritesData');
 let id = 11; //make sure this is larger than last id in data file
 
 getProducts = (req, res) => {
-    res.status(200).send(favoritesArr);
+    const { search } = req.query;
+    if (search) {
+        let lowerSearch = search.toLowerCase();
+        let filteredFavorites = favoritesArr.filter(product => product.type.toLowerCase().includes(lowerSearch)
+            || product.name.toLowerCase().includes(lowerSearch));
+        res.status(200).send(filteredFavorites);
+    } else {
+        res.status(200).send(favoritesArr);
+    }
 }
 
 addNewProduct = (req, res) => {

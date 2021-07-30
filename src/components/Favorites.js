@@ -11,10 +11,30 @@ class Favorites extends React.Component {
 
         this.state = {
             favorites: [],
+            search: '',
         }
     }
 
     componentDidMount() {
+        axios.get('/api/favorites')
+            .then(({ data }) => this.setState({ favorites: data }))
+            .catch(err => console.log(err));
+    }
+
+    handleSearchChange = (event) => {
+        const { value } = event.target;
+        this.setState({ search: value });
+    }
+
+    searchProducts = () => {
+        const { search } = this.state;
+        axios.get(`/api/favorites?search=${search}`)
+            .then(({ data }) => this.setState({ favorites: data }))
+            .catch(err => console.log(err));
+    }
+
+    resetSearchProducts = () => {
+        this.setState({ search: '' })
         axios.get('/api/favorites')
             .then(({ data }) => this.setState({ favorites: data }))
             .catch(err => console.log(err));
@@ -43,18 +63,28 @@ class Favorites extends React.Component {
         const { favorites } = this.state;
 
         return (
-            <main>
-                <section className="product-list">
-                    {favorites.map(product => <Product
-                        product={product}
-                        key={product.id}
-                        updateProduct={this.updateProduct}
-                        deleteProduct={this.deleteProduct} />)}
+            <>
+                <section className="search" >
+                    <label>
+                        Search Products:&nbsp;
+                        <input type="text" value={this.state.search} onChange={this.handleSearchChange} />
+                    </label>
+                    <button onClick={this.searchProducts}>Search</button>
+                    <button className={`reset-${this.state.search.length > 0 ? 'visible' : 'hidden'}`} onClick={this.resetSearchProducts}>Reset</button>
                 </section>
-                <section className="new-product">
-                    <NewProductForm addProduct={this.addProduct} />
-                </section>
-            </main>
+                <main>
+                    <section className="product-list">
+                        {favorites.map(product => <Product
+                            product={product}
+                            key={product.id}
+                            updateProduct={this.updateProduct}
+                            deleteProduct={this.deleteProduct} />)}
+                    </section>
+                    <section className="new-product">
+                        <NewProductForm addProduct={this.addProduct} />
+                    </section>
+                </main>
+            </>
         );
     }
 }
